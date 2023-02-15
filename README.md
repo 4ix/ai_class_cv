@@ -1,4 +1,15 @@
 # Computer Vision
+## 2023-02-15(수)
+- 알파 채널 이용하기
+```
+src = cv2.imread('./fig/ch2_fig/imgbin_hat.png', cv2.IMREAD_UNCHANGED)
+src = cv2.resize(src,(250, 180))
+
+src_img = src[:,:,:-1] # 알파채널 빼고 읽기
+src_mask = src[:,:,-1] # 알파채널만 읽기
+
+```
+
 ## 2023-02-14(화)
 - 마스크 만들기
 ```
