@@ -1,4 +1,81 @@
 # Computer Vision
+## 2023-02-17(금)
+- 동영상
+```
+cap = cv2.VideoCapture(0)
+
+if not cap.isOpened():
+    print('open failed')
+    sys.exit()
+
+f_flag = False
+i_flag = False
+
+while True:
+    ret, frame = cap.read()
+
+    if not ret:
+        print('frame read failed')
+        break
+    if f_flag == True:
+        frame = cv2.flip(frame, 1)
+    if i_flag == True:
+        frame = cv2.Canny(frame, 50, 150)
+
+    cv2.imshow('frame', frame)
+
+    key = cv2.waitKey(20)
+    
+    if key == 27:
+        break
+    elif key == ord('f'):
+        f_flag = not f_flag
+    elif key == ord('i'):
+        i_flag = not i_flag
+
+    
+cap.release()
+cv2.destroyAllWindows()
+```
+
+- 마우스 콜백
+```
+def call_mouse(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        print(f'left button clicked = {x}, {y}')
+    elif event == cv2.EVENT_LBUTTONUP:
+        print(f'left button up = {x}, {y}')
+    elif event == cv2.EVENT_MOUSEMOVE:
+        if flags == cv2.EVENT_FLAG_LBUTTON:
+            print(f'moving = {x}, {y}')
+
+
+
+
+img = np.ones((480, 640, 3), np.uint8) * 255
+
+cv2.namedWindow('img')
+cv2.setMouseCallback('img', call_mouse, img)
+
+cv2.imshow('img', img)
+
+cv2.waitKey()
+cv2.destroyAllWindows()
+```
+
+
+## 2023-02-16(목)
+- 이미지 필터
+```
+current = cv2.rotate(current, cv2.ROTATE_90_CLOCKWISE)
+...
+current = cv2.Canny(current, 50, 150)
+...
+current = cv2.GaussianBlur(current, (0, 0), 1)
+...
+```
+
+
 ## 2023-02-15(수)
 - 알파 채널 이용하기
 ```
