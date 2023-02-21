@@ -1,4 +1,58 @@
 # Computer Vision
+## 2023-02-21(화)
+- 트랙바
+```
+def call_trackbar(pos):
+    src[:] = (img/255) * pos
+    cv2.imshow('src', src)
+
+cv2.imshow('src', src)
+cv2.createTrackbar('level', 'src', 0, 255, call_trackbar)
+```
+
+- 시간 체크
+```
+tm.start()
+for _ in range(100):
+    img = cv2.GaussianBlur(src, (0,0), 5)
+
+tm.stop()
+t2 = time.time()
+print(tm.getTimeMilli(), 'ms')
+
+```
+
+- 산술연산
+```
+dst = cv2.add(src, (100, 100, 100, 0))
+
+dst1 = cv2.add(src1, src2)
+dst2 = cv2.addWeighted(src1, 0.5, src2, 0.5, 0.0)
+dst3 = cv2.subtract(src1, src2)
+dst4 = cv2.absdiff(src1, src2)
+```
+
+- 비트연산
+```
+bit_and = cv2.bitwise_and(src1, src2)
+bit_or = cv2.bitwise_or(src1, src2)
+bit_xor = cv2.bitwise_xor(src1, src2)
+bit_not = cv2.bitwise_not(src2)
+
+```
+
+- 컬러영상
+```
+src_hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)
+
+h, s, v = cv2.split(src_hsv) # hue 값은 최대값이 179 정도라서 밝게 나올 수가 없음
+v_1 = cv2.add(v, -50) # 색상은 보존하면서 밝기만 조절하고 싶을 때
+
+src_merge = cv2.merge((h, s, v_1))
+src_merge = cv2.cvtColor(src_merge, cv2.COLOR_HSV2BGR) # BGR로 바꿔줘야 밝기 조절이 가능함
+```
+
+
 ## 2023-02-17(금)
 - 동영상
 ```
