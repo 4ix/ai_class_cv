@@ -1,4 +1,16 @@
 # Computer Vision
+## 2023-03-02(목)
+- Deep Learning in OpenCV
+1. [깃허브 링크](https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV)
+2. image classification(VGG16 활용)
+3. image localization: 이미지 상 어디에 위치해 있는지 확인 (좌표를 찾아야 함)
+
+- googlenet
+1. [cafe model](http://dl.caffe.berkeleyvision.org/)
+2. [config file](https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/deploy.prototxt)
+3. [분류 1000개](https://github.com/opencv/opencv/blob/4.x/samples/data/dnn/classification_classes_ILSVRC2012.txt)
+4. [onix model](https://github.com/onnx/models/tree/main/vision/classification/inception_and_googlenet/googlenet)
+
 ## 2023-02-22(수)
 - 영상의 히스토그램
 ```py
