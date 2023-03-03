@@ -1,4 +1,11 @@
 # Computer Vision
+## 2023-03-03(금)
+- Face Detector
+1. [깃허브 링크](https://github.com/opencv/opencv/tree/master/samples/dnn/face_detector)
+
+- Yolo Model
+1. [DarkNet](https://pjreddie.com/darknet/yolo/)
+
 ## 2023-03-02(목)
 - Deep Learning in OpenCV
 1. [깃허브 링크](https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV)
